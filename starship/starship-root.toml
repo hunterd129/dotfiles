@@ -1,0 +1,38 @@
+format = """
+$username\
+$hostname\
+$directory\
+$line_break\
+$character"""
+
+[username]
+show_always = true
+style_root = "bold red"
+format = "[$user ]($style)"
+
+#[hostname]
+#ssh_only = false
+#format = " [@ $hostname]($style) "
+#style = "bold red"
+
+
+[directory]
+style = "bold red"
+truncation_length = 3
+truncation_symbol = '…/'
+disabled = false
+#read_only = " 🔒"
+
+[character]
+success_symbol = "[#](bold red)"
+error_symbol = "[#](bold yellow)"
+
+[git_branch]
+disabled = true
+
+[git_status]
+disabled = true
+
+[package]
+disabled = true
+
