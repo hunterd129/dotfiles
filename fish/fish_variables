@@ -1,0 +1,9 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR EDITOR:nvim
+SETUVAR __fish_initialized:4300
+SETUVAR fish_color_command:7ad9ff
+SETUVAR fish_color_error:f7768e
+SETUVAR fish_color_operator:bb9af7
+SETUVAR fish_color_param:abb2bf
+SETUVAR fish_color_quote:9ece6a
