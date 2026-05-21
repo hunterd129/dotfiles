@@ -21,8 +21,8 @@ yellow = '#E0AF68'
 
 [username]
 show_always = true
-style_root = "bold red"
-style_user = "blue"
+style_root = "#FF5555"
+style_user = "#5FAFFF"
 format = "[$user]($style) in "
 aliases = { "hunte" = "hunter" }
 
@@ -30,7 +30,7 @@ aliases = { "hunte" = "hunter" }
 truncation_length = 3
 truncation_symbol = '…/'
 disabled = false
-style = 'green'
+style = '#87D75F'
 read_only = '🔒'
 read_only_style = 'red'
 use_os_path_sep = false
