@@ -1,27 +1,8 @@
 scan_timeout = 45
 
-palette = 'tokyo-night'
-
-[palettes.tokyo-night]
-blue = '#7AA2F7'
-brightBlack = '#414868'
-brightBlue = '#7AA2F7'
-brightCyan = '#7DCFFF'
-brightGreen = '#73DACA'
-brightPurple = '#BB9AF7'
-brightRed = '#F7768E'
-brightWhite = '#C0CAF5'
-brightYellow = '#E0AF68'
-cyan = '#7DCFFF'
-green = '#73DACA'
-purple = '#BB9AF7'
-red = '#F7768E'
-white = '#C0CAF5'
-yellow = '#E0AF68'
-
 [username]
 show_always = true
-style_root = "#FF5555"
+style_root = "#F7768E"
 style_user = "#5FAFFF"
 format = "[$user]($style) in "
 aliases = { "hunte" = "hunter" }
@@ -32,21 +13,21 @@ truncation_symbol = '…/'
 disabled = false
 style = '#87D75F'
 read_only = '🔒'
-read_only_style = 'red'
+read_only_style = '#F7768E'
 use_os_path_sep = false
 
 [cmd_duration]
 min_time = 2_000
 show_milliseconds = false
 format = ' [ $duration]($style) '
-style = 'Bright-black'
+style = '#414868'
 disabled = false
 show_notifications = false
 min_time_to_notify = 45_000
 
 [character]
 success_symbol = "[\\$](#CCCCFF) "
-error_symbol = "[\\$](yellow) "
+error_symbol = "[\\$](#E0AF68) "
 
 [c]
 symbol = " "
@@ -68,4 +49,3 @@ symbol = "󱘗 "
 
 [sudo]
 symbol = " "
-
