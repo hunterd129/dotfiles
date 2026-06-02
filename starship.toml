@@ -1,18 +1,28 @@
 scan_timeout = 45
 
+format = """
+$username[ in ](italic)\
+$directory\
+$cmd_duration\
+$git_branch\
+$git_status\
+$rust\
+$line_break\
+$character\
+"""
 [username]
 show_always = true
 style_root = "#F7768E"
-style_user = "#5FAFFF"
-format = "[$user]($style) in "
+style_user = '#87D75F'
+format = "[$user]($style)"
 aliases = { "hunte" = "hunter" }
 
 [directory]
 truncation_length = 3
 truncation_symbol = '…/'
 disabled = false
-style = '#87D75F'
-read_only = '🔒'
+style = "#5FAFFF"
+read_only = ' '
 read_only_style = '#F7768E'
 use_os_path_sep = false
 
@@ -49,3 +59,5 @@ symbol = "󱘗 "
 
 [sudo]
 symbol = " "
+style = "bold blue"
+disabled = false
