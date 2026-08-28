@@ -1,8 +1,6 @@
-window-width = 137
-window-height = 40
+window-width = 212
+window-height = 50
 font-family = "IosevkaTerm NFM"
 font-size = 14.5
 theme = Catppuccin Mocha
-background-opacity = 0.85
-background-blur = false
 resize-overlay = never

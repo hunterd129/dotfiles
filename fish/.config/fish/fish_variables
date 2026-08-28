@@ -8,7 +8,7 @@ SETUVAR fish_color_error:f7768e
 SETUVAR fish_color_operator:bb9af7
 SETUVAR fish_color_param:abb2bf
 SETUVAR fish_color_quote:9ece6a
-SETUVAR fish_user_paths:/home/hunter/\x2elocal/bin
+SETUVAR fish_user_paths:/home/hunter/\x2econfig/emacs/bin\x1e/home/hunter/\x2elocal/bin
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute
