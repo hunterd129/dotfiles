@@ -87,7 +87,7 @@ fastfetch
 
 # Starship prompt
 if [[ "$(tty)" == /dev/tty[0-9]* ]]; then
-PROMPT=$'%K{black}%F{cyan}%~%k%f\n%F{white}>%f '
+  PROMPT=$'%K{black}%F{cyan}%~%k%f\n%F{white}>%f '
 else
   eval "$(starship init zsh)"
 fi
