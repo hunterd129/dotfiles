@@ -2,21 +2,21 @@ scan_timeout = 45
 
 format = """
 $directory\
+$sudo\
 $git_branch\
 $git_status\
 $rust\
 $c\
 $zig\
 $golang\
+$nix_shell\
+$git_commit\
+$cmd_duration\
+$fill\
+$time\
 $line_break\
 $character\
 """
-[username]
-show_always = true
-style_root = "189"
-style_user = "75"
-format = "[$user]($style)"
-aliases = { "hunte" = "hunter" }
 
 [directory]
 truncation_length = 5
@@ -24,8 +24,111 @@ truncation_symbol = '…/'
 disabled = false
 style = "75"
 read_only = ' '
-read_only_style = 'red'
+read_only_style = 'bold red'
 use_os_path_sep = false
+
+[sudo]
+format = '[as $symbol]($style)'
+symbol = " "
+style = 'bold red'
+disabled = false
+
+[git_branch]
+always_show_remote = false
+format = 'on [$symbol$branch(:$remote_branch)]($style) '
+symbol = " "
+style = 'bold purple'
+truncation_symbol = '…'
+only_attached = false
+ignore_branches = []
+ignore_bare_repo = false
+disabled = false
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = '='
+ahead = '⇡'
+behind = '⇣'
+diverged = '⇕'
+up_to_date = ''
+untracked = '?'
+stashed = '\$'
+modified = '!'
+staged = '+'
+renamed = '»'
+deleted = '✘'
+typechanged = ""
+style = 'bold red'
+ignore_submodules = false
+worktree_added = ""
+worktree_deleted = ""
+index_added = ""
+index_modified = ""
+index_typechanged = ""
+disabled = false
+use_git_executable = false
+
+[rust]
+format = 'via [$symbol($version )]($style)'
+version_format = 'v${raw}'
+symbol = ' '
+detect_extensions = ['rs']
+detect_files = ['Cargo.toml']
+detect_folders = []
+style = 'bold red'
+disabled = false
+
+[c]
+format = 'via [$symbol($verson(\($name)\) )]($style)'
+version_format = 'v${raw}'
+symbol = ' '
+detect_extensions = ['c', 'h']
+detect_files = []
+detect_folders = []
+commands = [ [ 'cc', '--version' ], [ 'gcc', '--version' ], [ 'clang', '--version' ] ]
+style = 'bold 149'
+disabled = false
+
+[zig]
+format = 'via [$symbol($version )]($style)'
+version_format = 'v${raw}'
+symbol = '↯ '
+style = 'bold yellow'
+disabled = false
+detect_extensions = ['zig']
+detect_files = []
+detect_folders = []
+
+[golang]
+format = 'via [$symbol($version )]($style)'
+version_format = 'v${raw}'
+symbol = '🐹 '
+detect_extensions = ['go']
+detect_files = ['go.mod', 'go.sum', 'go.work', 'glide.yaml', 'gopkg.yml', 'gopkg.lock', '.go-version']
+detect_folders = ['Godeps']
+style = 'bold cyan'
+not_capable_style = 'bold red'
+disabled = false
+
+[nix_shell]
+format = 'via [$symbol$state(\$name\))]($style) '
+symbol = '❄️ '
+style = 'bold blue'
+impure_msg = 'impure'
+pure_msg = 'pure'
+unknown_msg = ''
+disabled = false
+heuristic = false
+
+[git_commit]
+commit_hash_length = 7
+format = '[#$hash$tag]($style) '
+style = 'bold green'
+only_detached = false
+tag_disabled = true
+tag_max_candidates = 0
+tag_symbol = '🔖 '
+disabled = false
 
 [cmd_duration]
 min_time = 2_000
@@ -36,29 +139,20 @@ disabled = false
 show_notifications = false
 min_time_to_notify = 45_000
 
+[fill]
+symbol = ' '
+style = 'bold green'
+
+[time]
+format = '[$time]($style) '
+use_12hr = false
+style = '238'
+utc_time_offset = 'local'
+disabled = false
+
+[line_break]
+disabled = false
+
 [character]
 success_symbol = "[❯](189)"
-error_symbol = "[❯](179)"
-
-[c]
-symbol = " "
-
-[git_branch]
-symbol = " "
-
-[git_commit]
-tag_symbol = '  '
-
-[hostname]
-ssh_symbol = " "
-
-[package]
-symbol = "󰏗 "
-
-[rust]
-symbol = "󱘗 "
-
-[sudo]
-symbol = " "
-style = "bold blue"
-disabled = false
+error_symbol = "[❯](189)"

@@ -36,6 +36,12 @@
             "type": "os"
         },
         {
+            "key": "│ {#36}󰔠 age     {#keys}│",
+            "type": "disk",
+            "folders": "/",
+            "format": "{days} days"
+        },
+        {
             "key": "│ {#35} kernel  {#keys}│",
             "type": "kernel"
         },
@@ -64,11 +70,6 @@
         {
             "key": "│ {#35} memory  {#keys}│",
             "type": "memory"
-        },
-        {
-            "key": "│ {#36}󰩟 network {#keys}│",
-            "type": "localip",
-            "format": "{ipv4} ({ifname})"
         },
         {
             "key": "├───────────┤",

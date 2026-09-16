@@ -6,6 +6,8 @@ HISTFILE="$XDG_DATA_HOME/zsh/history"
 HISTSIZE=100000
 SAVEHIST=100000
 
+walls="$HOME/Pictures/Wallpapers"
+
 FUNCNEST=100
 
 setopt APPEND_HISTORY
@@ -50,8 +52,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matche
 # =========================================================
 # Fuzzy finder
 # =========================================================
-
-# Arch
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
   source /usr/share/fzf/key-bindings.zsh
   source /usr/share/fzf/completion.zsh
