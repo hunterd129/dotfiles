@@ -12,8 +12,6 @@ $golang\
 $nix_shell\
 $git_commit\
 $cmd_duration\
-$fill\
-$time\
 $line_break\
 $character\
 """
@@ -79,7 +77,7 @@ style = 'bold red'
 disabled = false
 
 [c]
-format = 'via [$symbol($verson(\($name)\) )]($style)'
+format = 'via [$symbol($version(\($name)\) )]($style)'
 version_format = 'v${raw}'
 symbol = ' '
 detect_extensions = ['c', 'h']
@@ -138,17 +136,6 @@ style = '238'
 disabled = false
 show_notifications = false
 min_time_to_notify = 45_000
-
-[fill]
-symbol = ' '
-style = 'bold green'
-
-[time]
-format = '[$time]($style) '
-use_12hr = false
-style = '238'
-utc_time_offset = 'local'
-disabled = false
 
 [line_break]
 disabled = false
