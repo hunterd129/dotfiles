@@ -12,9 +12,9 @@ alias tree='eza --tree --icons'
 compdef eza=ls
 
 # Git aliases
-alias gs='git status'
-alias gc='git commit'
-alias gp='git push'
+alias gts='git status'
+alias gtc='git commit'
+alias gtp='git push'
 alias grm='git rm'
 alias gres='git restore'
 
