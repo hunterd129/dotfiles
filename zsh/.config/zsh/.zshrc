@@ -76,6 +76,9 @@ source "$ZDOTDIR/plugins.zsh"
 # Emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
+#fix emacs after suspend and/or restart hopefully
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
 # Obligatory fastfetch
 fastfetch
 
@@ -85,3 +88,7 @@ if [[ "$(tty)" == /dev/tty[0-9]* ]]; then
 else
   eval "$(starship init zsh)"
 fi
+
+# Go path
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"

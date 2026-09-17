@@ -1,5 +1,5 @@
 # Editor aliases
-alias emacs="emacsclient -c"
+alias emacs='emacsclient -c -a ""'
 alias vim='nvim'
 alias tmacs='emacsclient -t'
 
