@@ -11,6 +11,13 @@ alias tree='eza --tree --icons'
 # Reuse ls completions for eza
 compdef eza=ls
 
+# Git aliases
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'
+alias grm='git rm'
+alias gres='git restore'
+
 # Other aliases
 alias grep='rg --color=auto'
 alias diff='diff --color-auto'
