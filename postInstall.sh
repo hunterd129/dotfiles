@@ -29,7 +29,7 @@ sudo pacman -S --noconfirm --needed \
     ttc-iosevka-aile \
     ttc-iosevka-etoile \
     ttf-iosevka-nerd \
-    ttc-iosevka-s08 \
+    ttc-iosevka-ss08 \
     zsh \
     ghostty \
     eza \
