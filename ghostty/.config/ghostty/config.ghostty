@@ -4,4 +4,3 @@ font-family = "IosevkaTerm NFM"
 font-size = 14.5
 theme = Gruvbox Material
 resize-overlay = never
-confirm-close-surface = false

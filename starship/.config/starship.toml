@@ -2,7 +2,6 @@ scan_timeout = 45
 
 format = """
 $directory\
-$sudo\
 $git_branch\
 $git_status\
 $rust\
@@ -24,12 +23,6 @@ style = "75"
 read_only = ' '
 read_only_style = 'bold red'
 use_os_path_sep = false
-
-[sudo]
-format = '[as $symbol]($style)'
-symbol = " "
-style = 'bold red'
-disabled = false
 
 [git_branch]
 always_show_remote = false
@@ -83,7 +76,7 @@ symbol = ' '
 detect_extensions = ['c', 'h']
 detect_files = []
 detect_folders = []
-commands = [ [ 'cc', '--version' ], [ 'gcc', '--version' ], [ 'clang', '--version' ] ]
+commands = [['cc', '--version'], ['gcc', '--version'], ['clang', '--version']]
 style = 'bold 149'
 disabled = false
 
@@ -102,7 +95,15 @@ format = 'via [$symbol($version )]($style)'
 version_format = 'v${raw}'
 symbol = '🐹 '
 detect_extensions = ['go']
-detect_files = ['go.mod', 'go.sum', 'go.work', 'glide.yaml', 'gopkg.yml', 'gopkg.lock', '.go-version']
+detect_files = [
+    'go.mod',
+    'go.sum',
+    'go.work',
+    'glide.yaml',
+    'gopkg.yml',
+    'gopkg.lock',
+    '.go-version',
+]
 detect_folders = ['Godeps']
 style = 'bold cyan'
 not_capable_style = 'bold red'

@@ -23,7 +23,7 @@ setopt HIST_FIND_NO_DUPS
 
 setopt AUTOCD
 setopt NOBEEP
-setopt NUMERIC_GLOB_SORT  
+setopt NUMERIC_GLOB_SORT
 
 # =========================================================
 # Smart directory navigation & lf
@@ -75,9 +75,6 @@ source "$ZDOTDIR/plugins.zsh"
 
 # Emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
-
-#fix emacs after suspend and/or restart hopefully
-dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # Obligatory fastfetch
 fastfetch
