@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # shellcheck disable=SC3040
+
 set -euo pipefail
 printf "\033[0;34m==> Beginning post-install script...\033[0m\n"
 printf "\n"
@@ -18,7 +19,7 @@ printf "\033[0;34m==> Installing basic packages...\033[0m\n"
 
 # Emacs, langs, LSPs, Fonts, Shell, and Dotfile management
 sudo pacman -S --noconfirm --needed \
-    emacs \
+    emacs-wayland \
     shellcheck \
     gopls \
     go \
@@ -26,6 +27,8 @@ sudo pacman -S --noconfirm --needed \
     rust-analyzer \
     markdownlint \
     discount \
+    shfmt \
+    cmake \
     ttc-iosevka-aile \
     ttc-iosevka-etoile \
     ttf-iosevka-nerd \
