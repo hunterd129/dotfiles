@@ -18,3 +18,4 @@ alias cat='bat'
 alias find='fd'
 alias cd='z'
 alias rm='rm -i'
+alias pacsrch="pacman -Ss --color=always | paste -d '' - - | fzf --ansi"
