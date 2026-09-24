@@ -21,12 +21,9 @@ alias emacs="emacsclient -ta 'nvim'"
 # Zoxide
 eval "$(zoxide init bash)"
 
-# Bash Prompt
-PS1='\[\e[38;5;39m\]\w\n\[\e[38;5;189m\]>\[\e[0m\] '
-
 # Starship prompt
 if [[ "$(tty)" == /dev/tty[0-9]* ]]; then
-	PS1='\[\e[38;5;39m\]\w\n\[\e[38;5;189m\]>\[\e[0m\] '
+    PS1='\[\e[38;5;39m\]\w\n\[\e[38;5;189m\]>\[\e[0m\] '
 else
-	eval "$(starship init bash)"
+    eval "$(starship init bash)"
 fi
