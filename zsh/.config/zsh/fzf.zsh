@@ -9,7 +9,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # UI
 export FZF_DEFAULT_OPTS='
-  --height=60%
+  --height=95%
   --layout=reverse
   --border=rounded
   --prompt="  "
