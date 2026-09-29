@@ -30,8 +30,8 @@ setopt NUMERIC_GLOB_SORT
 # =========================================================
 
 if [[ -f ~/.config/lf/icons ]]; then
-  LF_ICONS=$(cat ~/.config/lf/icons | tr '\n' ':')
-  export LF_ICONS
+	LF_ICONS=$(cat ~/.config/lf/icons | tr '\n' ':')
+	export LF_ICONS
 fi
 
 # Enable zoxide
@@ -47,14 +47,14 @@ compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 zstyle ':completion:*' menu select
 
 # Make completion case-insensitive
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matches upper and lower
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # lowercase input matches upper and lower
 
 # =========================================================
 # Fuzzy finder
 # =========================================================
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
+	source /usr/share/fzf/key-bindings.zsh
+	source /usr/share/fzf/completion.zsh
 fi
 
 # =========================================================
@@ -76,16 +76,16 @@ source "$ZDOTDIR/plugins.zsh"
 # Emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
+# =========================================================
+# Appearance
+# =========================================================
+
 # Obligatory fastfetch
 fastfetch
 
 # Starship prompt
 if [[ "$(tty)" == /dev/tty[0-9]* ]]; then
-  PROMPT=$'%K{black}%F{cyan}%~%k%f\n%F{white}>%f '
+	PROMPT=$'%K{black}%F{cyan}%~%k%f\n%F{white}>%f '
 else
-  eval "$(starship init zsh)"
+	eval "$(starship init zsh)"
 fi
-
-# Go path
-export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
