@@ -1,6 +1,10 @@
 window-width = 212
 window-height = 50
-font-family = "IosevkaTerm NFM"
+font-family = "IosevkaTerm Nerd Font Mono"
 font-size = 14.5
 theme = Gruvbox Material
 resize-overlay = never
+cursor-style = underline
+window-title-font-family = "Iosevka Aile"
+gtk-titlebar-hide-when-maximized = true
+
