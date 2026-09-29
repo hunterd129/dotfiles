@@ -13,7 +13,6 @@ for i in 3 2 1; do
 	sleep 1
 done
 
-printf "\n"
 clear
 
 printf "\e[0;34m==> Installing basic packages...\e[0m\n"
@@ -45,11 +44,41 @@ sudo pacman -S --noconfirm --needed \
 	starship \
 	fastfetch \
 	neovim \
+	steam \
+	gamescope \
+	gamemode \
+	btop \
+	gnome-font-viewer \
+	bazaar \
+	resources \
 	git \
 	stow
 printf "\e[0;34m==> Installing symbola font via AUR...\e[0m\n"
 
 paru -S --noconfirm --needed otf-symbola
+
+# Git projects
+git clone https://github.com/hunterd129/upgrade_notify ~/Projects/upgradeNotify
+git clone https://github.com/hunterd129/wallpaper_shuffler_rs ~/Projects/wall_shuff
+git clone https://github.com/hunterd129/batch_renamer ~/Projects/batch_renamer
+
+# Emacs
+systemctl --user daemon-reload
+systemctl --user enable --now emacs.service
+
+# Dotfiles
+printf "\e[0;34m==> Stowing configs...\e[0m\n"
+
+stow doom
+stow bash
+stow fastfetch
+stow ghostty
+stow nvim
+stow starship
+
+printf "\e[0;34mNote: Please stow zsh manually after editing /etc/zsh/zshenv\e[0m\n"
+
+sleep 2
 
 # Chaotic AUR
 printf "\e[0;34m==> Adding chaotic AUR repository...\e[0m\n"
