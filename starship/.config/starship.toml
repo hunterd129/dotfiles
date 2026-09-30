@@ -4,13 +4,17 @@ format = """
 $directory\
 $git_branch\
 $git_status\
+$git_commit\
+$cmd_duration\
+$fill\
+$git_metrics\
 $rust\
 $c\
+$cpp\
 $zig\
 $golang\
 $nix_shell\
-$git_commit\
-$cmd_duration\
+$lua\
 $line_break\
 $character\
 """
@@ -26,7 +30,7 @@ use_os_path_sep = false
 
 [git_branch]
 always_show_remote = false
-format = 'on [$symbol$branch(:$remote_branch)]($style) '
+format = '[$symbol$branch(:$remote_branch)]($style) '
 symbol = " "
 style = 'bold purple'
 truncation_symbol = '…'
@@ -59,66 +63,6 @@ index_typechanged = ""
 disabled = false
 use_git_executable = false
 
-[rust]
-format = 'via [$symbol($version )]($style)'
-version_format = 'v${raw}'
-symbol = ' '
-detect_extensions = ['rs']
-detect_files = ['Cargo.toml']
-detect_folders = []
-style = 'bold red'
-disabled = false
-
-[c]
-format = 'via [$symbol($version(\($name)\) )]($style)'
-version_format = 'v${raw}'
-symbol = ' '
-detect_extensions = ['c', 'h']
-detect_files = []
-detect_folders = []
-commands = [['cc', '--version'], ['gcc', '--version'], ['clang', '--version']]
-style = 'bold 149'
-disabled = false
-
-[zig]
-format = 'via [$symbol($version )]($style)'
-version_format = 'v${raw}'
-symbol = '↯ '
-style = 'bold yellow'
-disabled = false
-detect_extensions = ['zig']
-detect_files = []
-detect_folders = []
-
-[golang]
-format = 'via [$symbol($version )]($style)'
-version_format = 'v${raw}'
-symbol = '🐹 '
-detect_extensions = ['go']
-detect_files = [
-    'go.mod',
-    'go.sum',
-    'go.work',
-    'glide.yaml',
-    'gopkg.yml',
-    'gopkg.lock',
-    '.go-version',
-]
-detect_folders = ['Godeps']
-style = 'bold cyan'
-not_capable_style = 'bold red'
-disabled = false
-
-[nix_shell]
-format = 'via [$symbol$state(\$name\))]($style) '
-symbol = '❄️ '
-style = 'bold blue'
-impure_msg = 'impure'
-pure_msg = 'pure'
-unknown_msg = ''
-disabled = false
-heuristic = false
-
 [git_commit]
 commit_hash_length = 7
 format = '[#$hash$tag]($style) '
@@ -137,6 +81,108 @@ style = '238'
 disabled = false
 show_notifications = false
 min_time_to_notify = 45_000
+
+[fill]
+symbol = ' '
+
+[git_metrics]
+added_style = 'bold green'
+deleted_style = 'bold red'
+only_nonzero_diffs = true
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+disabled = false
+ignore_submodules = false
+
+[rust]
+format = '[$symbol($version )]($style)'
+version_format = 'v${raw}'
+symbol = ' '
+detect_extensions = ['rs']
+detect_files = ['Cargo.toml']
+detect_folders = []
+style = 'bold red'
+disabled = false
+
+[c]
+format = '[$symbol($version(\($name)\) )]($style)'
+version_format = 'v${raw}'
+symbol = ' '
+detect_extensions = ['c', 'h']
+detect_files = []
+detect_folders = []
+commands = [['cc', '--version'], ['gcc', '--version'], ['clang', '--version']]
+style = 'bold 149'
+disabled = false
+
+[cpp]
+format = '[$symbol($version(-$name) )]($style)'
+version_format = 'v${raw}'
+symbol = ' '
+detect_extensions = [
+    'cpp',
+    'cc',
+    'cxx',
+    'c++',
+    'hpp',
+    'hh',
+    'hxx',
+    'h++',
+    'tcc'
+]
+detect_files = []
+detect_folders = []
+commands = [ [ 'c++', '--version' ], [ 'g++', '--version' ], [ 'clang++', '--version' ] ]
+style = 'bold 149'
+disabled = false
+
+[zig]
+format = '[$symbol($version )]($style)'
+version_format = 'v${raw}'
+symbol = '↯ '
+style = 'bold yellow'
+disabled = false
+detect_extensions = ['zig']
+detect_files = []
+detect_folders = []
+
+[golang]
+format = '[$symbol($version )]($style)'
+version_format = 'v${raw}'
+symbol = '🐹 '
+detect_extensions = ['go']
+detect_files = [
+    'go.mod',
+    'go.sum',
+    'go.work',
+    'glide.yaml',
+    'gopkg.yml',
+    'gopkg.lock',
+    '.go-version'
+]
+detect_folders = ['Godeps']
+style = 'bold cyan'
+not_capable_style = 'bold red'
+disabled = false
+
+[nix_shell]
+format = '[$symbol$state(\$name\))]($style) '
+symbol = '❄️ '
+style = 'bold blue'
+impure_msg = 'impure'
+pure_msg = 'pure'
+unknown_msg = ''
+disabled = false
+heuristic = false
+
+[lua]
+format = '[$symbol($version)]($style)'
+version_format = 'v${raw}'
+symbol = '🌙 '
+detect_extensions = ['lua']
+detect_files = ['.lua-version']
+style = 'bold blue'
+lua_binary = 'lua'
+disabled = false
 
 [line_break]
 disabled = false
