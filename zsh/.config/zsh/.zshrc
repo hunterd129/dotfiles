@@ -47,7 +47,7 @@ compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 zstyle ':completion:*' menu select
 
 # Make completion case-insensitive
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # lowercase input matches upper and lower
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # =========================================================
 # Fuzzy finder
@@ -89,3 +89,7 @@ if [[ "$(tty)" == /dev/tty[0-9]* ]]; then
 else
 	eval "$(starship init zsh)"
 fi
+
+# ZSH-Vi-Mode cursor overrides
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
