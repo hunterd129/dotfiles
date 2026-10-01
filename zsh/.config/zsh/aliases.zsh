@@ -17,5 +17,6 @@ alias diff='diff --color-auto'
 alias cat='bat'
 alias find='fd'
 alias cd='z'
-alias rm='rm -i'
+alias rm='rm -iv'
+alias cp='cp -v'
 alias pacsrch="pacman -Ss --color=always | paste -d ' ' - - | fzf --ansi --height 95% --preview 'pacman -Si {1}' --preview-window=right:50%:wrap"
