@@ -6,7 +6,7 @@ alias tmacs='emacsclient -t'
 # Eza aliases
 alias ls='tzst_eza_build --icons always'
 alias ll='tzst_eza_build -lhAobn --no-permissions --group-directories-first --icons always'
-alias tree='eza --tree --icons'
+alias tree='tzst_eza_build --tree --icons always'
 
 # Reuse ls completions for eza
 compdef eza=ls
