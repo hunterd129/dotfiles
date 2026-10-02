@@ -4,8 +4,8 @@ alias vim='nvim'
 alias tmacs='emacsclient -t'
 
 # Eza aliases
-alias ls='eza --icons always'
-alias ll='eza -lhAobn --no-permissions --group-directories-first --icons always'
+alias ls='tzst_eza_build --icons always'
+alias ll='tzst_eza_build -lhAobn --no-permissions --group-directories-first --icons always'
 alias tree='eza --tree --icons'
 
 # Reuse ls completions for eza
