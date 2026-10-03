@@ -23,11 +23,14 @@ sudo pacman -S --noconfirm --needed \
 	shellcheck \
 	gopls \
 	go \
-	rust \
+	rustup \
 	rust-analyzer \
+	vis \
 	markdownlint \
 	discount \
 	shfmt \
+	vis-lexers \
+	lua-lpeg \
 	cmake \
 	ttc-iosevka-aile \
 	ttc-iosevka-etoile \
@@ -43,7 +46,6 @@ sudo pacman -S --noconfirm --needed \
 	fzf \
 	starship \
 	fastfetch \
-	neovim \
 	steam \
 	gamescope \
 	gamemode \
@@ -73,7 +75,8 @@ stow doom
 stow bash
 stow fastfetch
 stow ghostty
-stow nvim
+#stow nvim
+stow vis
 stow starship
 
 printf "\e[0;34mNote: Please stow zsh manually after editing /etc/zsh/zshenv\e[0m\n"
