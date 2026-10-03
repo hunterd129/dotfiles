@@ -16,5 +16,3 @@ vis:map(vis.modes.NORMAL," fs", function()
 	vis:command("w")
 end)
 vis:map(vis.modes.INSERT, "jk", "")
---vis.keymaps.insert['jk'] = ''
---vis.keymaps.NORMAL[' fs'] = ':w'
